@@ -1,0 +1,21 @@
+{
+    "name": "asgeirsh/curllib",
+    "description": "Interface and class for CURLing from PHP",
+    "type": "library",
+    "require": {
+        "php": "5.*",
+        "ext-curl": "^0.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AsgeirSH\\CURLlib\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Asgeir Stavik Hustad",
+            "email": "askhus@online.no"
+        }
+    ]
+}
