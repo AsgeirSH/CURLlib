@@ -29,7 +29,7 @@ The actual library is also designed to be simple to use, yet still allow flexibi
  $curl = new CURL('http://example.com/');
  $result = $curl->exec();
 ```
-This is a GET-request, with a standard timeout of 12 seconds, that returns an object if the result is JSON or serialized data. Otherwise it returns the full HTML returned from CURL.
+This is a GET-request, with a standard timeout of 12 seconds, that returns an object if the result is JSON or serialized data. Otherwise it returns the full response returned from CURL.
 
 It is also possible to set headers, timeouts and which port to use:
 ```
@@ -42,7 +42,7 @@ $result = $curl->setURL('http://jsonplaceholder.typicode.com/posts/1')
 	->exec();
 ```
 
-To post data, just use `setData()`. `setData()` adds POST-data if the request-type is POST, or builds a querystring for any other request-type (i.e. `setData()` can also be used to add GET-parameters to a standard request).
+To post data, just use `setData()`. `setData()` adds POST-data if the request-type is POST, or builds a querystring for any other request-type (i.e. `setData()` can also be used to add GET-parameters to a standard request). You can also add JSON here, as a string. JSON can also be added by `setJson()`.
 ```
 $curl = new CURL();
 $result = $curl->setURL('http://jsonplaceholder.typicode.com/posts')
@@ -51,6 +51,8 @@ $result = $curl->setURL('http://jsonplaceholder.typicode.com/posts')
 	->exec();
 ```
 All of the above sourcecode can be run as-is (infact, they run like that in my [Example](examples/Curl_basic.php)). Thanks to the fabulous [Typicode](https://github.com/typicode) for hosting the JSON Placeholder Fake REST API website!
+
+For more examples of use, check out my repository [SBBapi](https://github.com/AsgeirSH/SSBapi) (in Norwegian). This project provides a very clean way of interacting with the Norwegian Bureau of Statistics open API in PHP.
 
 License
 -------
