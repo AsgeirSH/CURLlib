@@ -54,5 +54,5 @@ All of the above sourcecode can be run as-is (infact, they run like that in my [
 
 License
 -------
-This project uses the [MIT License](LICENSE), which basicly means that you can do pretty much whatever you want with this (`to deal in the Software without restriction`). If you have suggestions, feel free to add an [issue](issues/) or a [Pull Request](pulls/)!
+This project uses the [MIT License](LICENSE), which basicly means that you can do pretty much whatever you want with this (`to deal in the Software without restriction`). If you have suggestions, feel free to add an [issue](https://github.com/AsgeirSH/CURLlib/issues/) or a [Pull Request](https://github.com/AsgeirSH/CURLlib/pulls/)!
 
