@@ -31,7 +31,7 @@ The actual library is also designed to be simple to use, yet still allow flexibi
 ```
 This is a GET-request, with a standard timeout of 12 seconds, that returns an object if the result is JSON or serialized data. Otherwise it returns the full HTML returned from CURL.
 
-It is also possible to set headers, timeouts and port to use:
+It is also possible to set headers, timeouts and which port to use:
 ```
 $curl = new CURL();
 $result = $curl->setURL('http://jsonplaceholder.typicode.com/posts/1')

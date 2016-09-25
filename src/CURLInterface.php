@@ -27,7 +27,7 @@ interface CURLInterface {
 	public function addHeader($header);
 
 	### Sets the request data, if any. 
-	public function setData(array $data);
+	public function setData($data);
 
 	### Sets the timeout allowed before control should be returned to the caller.
 	public function setTimeout($timeout);

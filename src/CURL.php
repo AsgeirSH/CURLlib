@@ -23,8 +23,8 @@ class CURL implements CURLInterface {
 	private $headers = array();
 	### The user-Agent data
 	private $useragent = 'AsgeirSH\CURLlib\CURL';
-	### The data to be added in some requests.
-	private $data = array();
+	### The data to be added in some requests. Can be either JSON or array.
+	private $data;
 	### A list of errors that have occurred.
 	private $errors = array();
 
@@ -66,11 +66,19 @@ class CURL implements CURLInterface {
 		return $this;
 	}
 
-	public function setData(array $data) {
-		foreach($data as $key => $value) {
-			$this->data[$key] = $value;
+	public function setData($data) {
+		if(is_array($data)) {
+			foreach($data as $key => $value) {
+				$this->data[$key] = $value;
+			}
 		}
+		else 
+			$this->setJson($data);
+		return $this;
+	}
 
+	public function setJson($data) {
+		$this->data = $data;
 		return $this;
 	}
 
@@ -103,7 +111,6 @@ class CURL implements CURLInterface {
 				if(!empty($this->data))
 					$this->url = $this->url .'?'. http_build_query($this->data);
 				break;
-			// By default, data is added during 
 			default:
 				curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $this->requestType);
 				break;
