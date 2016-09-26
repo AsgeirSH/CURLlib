@@ -3,7 +3,7 @@
     "description": "Interface and class for CURLing from PHP",
     "type": "library",
     "require": {
-        "php": "5.*",
+        "php": ">=5.3.0",
         "ext-curl": "^0.0.0"
     },
     "autoload": {
