@@ -7,19 +7,9 @@ The CURLInterface is deliberately designed to not be exhaustive, but allow very 
 
 Installation
 ------------
-Install via composer:
-Add this to `composer.json`:
+To install via composer, simply run:
 ```
-"repositories": [
-	{
-		"url": "https://github.com/AsgeirSH/curllib"
-		"type": "git"
-	}
-],
-```
-and run
-```
-composer require asgeirsh/curllib:dev-master
+composer require asgeirsh/curllib:1.*
 ``` 
 
 Usage
@@ -29,7 +19,13 @@ The actual library is also designed to be simple to use, yet still allow flexibi
  $curl = new CURL('http://example.com/');
  $result = $curl->exec();
 ```
+
 This is a GET-request, with a standard timeout of 12 seconds, that returns an object if the result is JSON or serialized data. Otherwise it returns the full response returned from CURL.
+
+As always, remember to add the namespace at the top of the file:
+```
+ use AsgeirSH\CURLlib\CURL;
+```
 
 It is also possible to set headers, timeouts and which port to use:
 ```
@@ -52,9 +48,20 @@ $result = $curl->setURL('http://jsonplaceholder.typicode.com/posts')
 ```
 All of the above sourcecode can be run as-is (infact, they run like that in my [Example](examples/Curl_basic.php)). Thanks to the fabulous [Typicode](https://github.com/typicode) for hosting the JSON Placeholder Fake REST API website!
 
-For more examples of use, check out my repository [SBBapi](https://github.com/AsgeirSH/SSBapi) (in Norwegian). This project provides a very clean way of interacting with the Norwegian Bureau of Statistics open API in PHP.
+For more examples of use, check out my repository [SBBapi](https://github.com/AsgeirSH/SSBapi) (in Norwegian). This project provides a very clean way of interacting with the [Norwegian Bureau of Statistics](http://ssb.no) open API in PHP.
+
+Extension
+---------
+So you want to make your own CURL-wrapper based on this? Maybe you want methods for each method, like `->get($url)` or `->put($url)`? Either extend the CURL-class itself or make a totally different one which implements [CURLInterface](src/CURLInterface.php). 
+
+All required methods are described in detail in the source code.
+
+TODO
+----
+Things not yet implemented that I want to add:
+- Checking the return code of a response.
 
 License
 -------
-This project uses the [MIT License](LICENSE), which basicly means that you can do pretty much whatever you want with this (`to deal in the Software without restriction`). If you have suggestions, feel free to add an [issue](https://github.com/AsgeirSH/CURLlib/issues/) or a [Pull Request](https://github.com/AsgeirSH/CURLlib/pulls/)!
+This project uses the [MIT License](LICENSE), which basicly means that you can do pretty much whatever you want with this (`to deal in the Software without restriction`). If you have suggestions, please feel free to add an [issue](https://github.com/AsgeirSH/CURLlib/issues/) or a [Pull Request](https://github.com/AsgeirSH/CURLlib/pulls/)!
 

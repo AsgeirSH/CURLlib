@@ -156,7 +156,7 @@ class CURL implements CURLInterface {
 		else 
 			$body = $result;
 
-		// Check the status-code of the result
+		// TODO: Check the status-code of the result
 
 
 		// Process the result:
